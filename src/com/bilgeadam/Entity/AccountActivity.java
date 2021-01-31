@@ -5,17 +5,17 @@ import com.bilgeadam.enums.AccountActivitiesEnum;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class AccountActivities implements Serializable {
+public class AccountActivity implements Serializable {
 
     private static final long serialVersionUID = -4181258601967045777L;
     private LocalDateTime transactionTime;
     private AccountActivitiesEnum transactionType;
     private Account account;
 
-    public AccountActivities() {
+    public AccountActivity() {
     }
 
-    public AccountActivities(LocalDateTime transactionTime, AccountActivitiesEnum transactionType, Account account) {
+    public AccountActivity(LocalDateTime transactionTime, AccountActivitiesEnum transactionType, Account account) {
         this.transactionTime = transactionTime;
         this.transactionType = transactionType;
         this.account = account;

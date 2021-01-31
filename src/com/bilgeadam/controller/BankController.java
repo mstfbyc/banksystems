@@ -25,10 +25,8 @@ public class BankController {
         identityNumber = scanner.nextLine();
         PrintView.printEnterPassword();
         password = scanner.nextLine();
-        Customer customer = customerService.findByIdentityNumber(identityNumber);
         Boolean result =loginServices.login(identityNumber,password);
-        //TODO: Log servis Kayıt Oluşturacak.
-        LoginLogService.loginLog(customer,result);
+        LoginLogService.loginLog(identityNumber,result);
         return result;
     }
 

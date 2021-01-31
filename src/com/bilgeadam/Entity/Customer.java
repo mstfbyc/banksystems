@@ -21,6 +21,7 @@ public class Customer implements Serializable {
         this.surname = surname;
         this.identityNumber = identityNumber;
         this.password = password;
+        setAccount(new Account(10_000.00,identityNumber));
     }
 
     public Customer(String name, String surname, String identityNumber, String password, Account account) {

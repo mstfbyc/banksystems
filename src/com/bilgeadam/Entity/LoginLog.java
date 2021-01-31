@@ -5,32 +5,32 @@ import com.bilgeadam.enums.LoginEnum;
 import java.time.LocalDateTime;
 
 public class LoginLog {
-    private Account account;
-    private LocalDateTime transactionTime;
+    private String identityNumber;
+    private String transactionTime;
     private LoginEnum loginStatus;
 
     public LoginLog() {
     }
 
-    public LoginLog(Account account, LocalDateTime transactionTime, LoginEnum loginStatus) {
-        this.account = account;
+    public LoginLog(String identityNumber, String transactionTime, LoginEnum loginStatus) {
+        this.identityNumber = identityNumber;
         this.transactionTime = transactionTime;
         this.loginStatus = loginStatus;
     }
 
-    public Account getAccount() {
-        return account;
+    public String getIdentityNumber() {
+        return identityNumber;
     }
 
-    public void setAccount(Account account) {
-        this.account = account;
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
     }
 
-    public LocalDateTime getTransactionTime() {
+    public String getTransactionTime() {
         return transactionTime;
     }
 
-    public void setTransactionTime(LocalDateTime transactionTime) {
+    public void setTransactionTime(String transactionTime) {
         this.transactionTime = transactionTime;
     }
 
