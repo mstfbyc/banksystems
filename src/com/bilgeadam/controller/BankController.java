@@ -1,4 +1,4 @@
-package com.bilgeadam.view;
+package com.bilgeadam.controller;
 
 import com.bilgeadam.Entity.Account;
 import com.bilgeadam.Entity.Customer;
@@ -6,8 +6,11 @@ import com.bilgeadam.Services.CustomerService;
 import com.bilgeadam.Services.LoginLogService;
 import com.bilgeadam.Services.LoginServices;
 import com.bilgeadam.Services.SingupService;
+import com.bilgeadam.view.PrintView;
 
 import java.util.Scanner;
+
+import static com.bilgeadam.view.PrintView.singupScreen;
 
 public class BankController {
 
@@ -20,7 +23,7 @@ public class BankController {
         String password;
         PrintView.printIdentityNumber();
         identityNumber = scanner.nextLine();
-        PrintView.printPassword();
+        PrintView.printEnterPassword();
         password = scanner.nextLine();
         Customer customer = customerService.findByIdentityNumber(identityNumber);
         Boolean result =loginServices.login(identityNumber,password);
@@ -42,10 +45,9 @@ public class BankController {
                 loginStatus = loginScreen();
                 if(loginStatus){
                     transectionScreen();
-                    System.out.println("Giriş Başarılı....");
                     break;
                 }else{
-                    System.out.println("Parola veya Şifreniz Hatalı");
+                    PrintView.printInvalidPassword();
                 }
             }else if(loginSelect.equals("2")){
                 singupCustomer();
@@ -71,31 +73,30 @@ public class BankController {
         Scanner scanner = new Scanner(System.in);
         do {
 
-            System.out.println("Kayıt oluşturmadan çıkmak için q basınız...");
+            PrintView.singupScreen();
             exit = scanner.nextLine();
             if(exit.equalsIgnoreCase("q")){
                 status =true;
-            }
-            System.out.println("*************************************");
-            System.out.println("Lütfen İsminizi giriniz: ");
-            String name = scanner.nextLine();
-            System.out.println("Lütfen Soyisminizi giriniz: ");
-            String surname = scanner.nextLine();
-            PrintView.printIdentityNumber();
-            String identityNumber = scanner.nextLine();
-            PrintView.printNewPassword();
-            String newPassword = scanner.nextLine();
-            PrintView.printReplayNewPassword();
-            String replayPassword = scanner.nextLine();
-            if(newPassword.equals(replayPassword)){
-                customer = new Customer(name,surname,identityNumber,newPassword);
-                singupService.singup(customer);
-                status = true;
             }else{
-                System.out.println("Paralo ve parola tekrarı uyuşmamaktır.");
-                status = false;
+                PrintView.enterName();
+                String name = scanner.nextLine();
+                PrintView.enterSurname();
+                String surname = scanner.nextLine();
+                PrintView.printIdentityNumber();
+                String identityNumber = scanner.nextLine();
+                PrintView.printNewPassword();
+                String newPassword = scanner.nextLine();
+                PrintView.printReplayNewPassword();
+                String replayPassword = scanner.nextLine();
+                if(newPassword.equals(replayPassword)){
+                    customer = new Customer(name,surname,identityNumber,newPassword);
+                    singupService.singup(customer);
+                    status = true;
+                }else{
+                    PrintView.printInvalidPassword();
+                    status = false;
+                }
             }
-
         }while (!status);
         }
 
