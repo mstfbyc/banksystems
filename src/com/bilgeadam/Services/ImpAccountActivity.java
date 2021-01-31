@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ImpAccountActivity implements IDataWrite<AccountActivity>{
-    private static final String FILE_PATH ="accountActivities.bin";
+    private static final String FILE_PATH ="AccountActivities.bin";
     @Override
     public List<AccountActivity> findAll() {
         List<AccountActivity> accountActivityList = null;

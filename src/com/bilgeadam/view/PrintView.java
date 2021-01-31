@@ -21,6 +21,42 @@ public class PrintView {
 
     }
 
+    public static void screenTransactionsList(){
+        System.out.println(ConsoleColors.GREEN+TABLE_FRAME);
+        System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
+        System.out.println(ConsoleColors.GREEN+TABLE_ROW_START+ ConsoleColors.BLUE +"Para yatırmak için: "+ConsoleColors.RED+" 1  "+ConsoleColors.GREEN+"\t\t\t\t\t\t*");
+        System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
+        System.out.println(ConsoleColors.GREEN+TABLE_ROW_START+ConsoleColors.BLUE+"Para Çekmek için: " +ConsoleColors.RED+"2  "+ConsoleColors.GREEN+"\t\t\t\t\t*");
+        System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
+        System.out.println(ConsoleColors.GREEN+TABLE_ROW_START+ConsoleColors.BLUE+"Havale/EFT için: " +ConsoleColors.RED+"3  "+ConsoleColors.GREEN+"\t\t\t\t\t\t\t\t*");
+        System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
+        System.out.println(ConsoleColors.GREEN+TABLE_ROW_START+ConsoleColors.BLUE+"Hesap Hareketleri: " +ConsoleColors.RED+"4  "+ConsoleColors.GREEN+"\t\t\t\t\t\t\t\t*");
+        System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
+        System.out.println(ConsoleColors.GREEN+TABLE_ROW_START+ConsoleColors.BLUE+"Giriş Logları: " +ConsoleColors.RED+"5  "+ConsoleColors.GREEN+"\t\t\t\t\t\t\t\t*");
+        System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
+        System.out.println(ConsoleColors.GREEN+TABLE_ROW_START+ConsoleColors.BLUE+"Çıkış için : " +ConsoleColors.RED+"q  "+ConsoleColors.GREEN+"\t\t\t\t\t\t\t\t*");
+        System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
+        System.out.println(ConsoleColors.GREEN+TABLE_FRAME);
+        System.out.print(ConsoleColors.BLUE+"Lütfen Yapmak istediğiniz işlemi seçiniz: ");
+
+    }
+
+    public static void screenDeposit(){
+        System.out.print(ConsoleColors.BLUE +"Yatırılacak Tutarı Griniz(Örnek:12,00): ");
+    }
+    public static void screenWhitdraw(){
+        System.out.print(ConsoleColors.BLUE +"Çekmek istediğiniz Tutarı Griniz(Örnek:12,00): ");
+    }
+    public static void screenTransferAmount(){
+        System.out.print(ConsoleColors.BLUE +"Transefer etmek istediniz Tutarı Giriniz(Örnek:12,00): ");
+    }
+    public static void screenTransferAcccount(){
+        System.out.print(ConsoleColors.BLUE +"Transefer etmek istediniz T.C. numarasını giniz: ");
+    }
+    public static void screenInvalidTransferAccount(){
+        System.out.print(ConsoleColors.RED +"Göndermek istediğiniz TC numarasına ait hesap bulunamadı..\n");
+    }
+
     public static void singupScreen(){
         System.out.println(ConsoleColors.GREEN+TABLE_FRAME);
         System.out.println(ConsoleColors.GREEN+TABLE_EMPTY_ROW);
@@ -64,6 +100,9 @@ public class PrintView {
 
     public static void printEnterPassword(){
         System.out.print(ConsoleColors.BLUE+"Paralonuzu giriniz:");
+    }
+    public static void printInsufficientBalance(){
+        System.out.println(ConsoleColors.RED+"Yetersiz Bakiye...");
     }
 
 }

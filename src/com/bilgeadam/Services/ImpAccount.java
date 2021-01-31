@@ -9,7 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ImpAccount implements IDataWrite<Account> {
-    private static final String FILE_PATH ="account.bin";
+    private static final String FILE_PATH ="Account.bin";
+
 
     @Override
     public List<Account> findAll() {

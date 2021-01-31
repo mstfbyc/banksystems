@@ -11,14 +11,16 @@ public class AccountActivity implements Serializable {
     private LocalDateTime transactionTime;
     private AccountActivitiesEnum transactionType;
     private Account account;
+    private Double amount;
 
     public AccountActivity() {
     }
 
-    public AccountActivity(LocalDateTime transactionTime, AccountActivitiesEnum transactionType, Account account) {
+    public AccountActivity(LocalDateTime transactionTime, AccountActivitiesEnum transactionType, Account account, Double amount) {
         this.transactionTime = transactionTime;
         this.transactionType = transactionType;
         this.account = account;
+        this.amount = amount;
     }
 
     public LocalDateTime getTransactionTime() {
@@ -43,5 +45,22 @@ public class AccountActivity implements Serializable {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
+    @Override
+    public String toString() {
+        return "Hesap Hareketi:" +
+                "\t işlem Tarihi = " + transactionTime +
+                ", işlem Tipi =" + transactionType.getValue() +
+                ", Hesap=" + account +
+                ", Tutar=" + amount;
     }
 }

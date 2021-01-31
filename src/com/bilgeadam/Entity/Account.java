@@ -31,4 +31,12 @@ public class Account implements Serializable {
     public void setAccountNumber(String accountNumber) {
         this.accountNumber = accountNumber;
     }
+
+    @Override
+    public String toString() {
+        return "Hesap Bilgisi" +
+                "\tBakiye=" + balance +
+                "\t Hesap Numarası='" + accountNumber +
+                '\n';
+    }
 }
